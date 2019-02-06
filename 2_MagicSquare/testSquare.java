@@ -17,11 +17,11 @@ Square test1 = new Square();
      {
       square[i][j] = input.nextInt();
       numbers.add(square[i][j]);
-   
       }
    }// end of for loops
-   //System.out.println("Size of input array is: " + numbers.size());
-//   System.out.println("If array is square: " + test1.isSquare((numbers.size())));
-   System.out.println("If items are unique: " + test1.isUnique(numbers));
+   
+   System.out.println("Size of input array is: " + numbers.size());
+   System.out.println("Is the array square? " + test1.isSquare((numbers.size())));
+   System.out.println("Are the items unique? " + test1.isUnique(numbers));
    }
 }
