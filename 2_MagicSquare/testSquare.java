@@ -1,9 +1,9 @@
+
 import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.*;
 
 public class testSquare{
 public static void main(String[] args){
-
 
 ArrayList<Integer> numbers = new ArrayList<>(3);
 Scanner input = new Scanner(System.in);
@@ -23,5 +23,7 @@ Square test1 = new Square();
    System.out.println("Size of input array is: " + numbers.size());
    System.out.println("Is the array square? " + test1.isSquare((numbers.size())));
    System.out.println("Are the items unique? " + test1.isUnique(numbers));
+   System.out.println("Is the matrix magic square? " + test1.isMagic(square));
+   
    }
 }
