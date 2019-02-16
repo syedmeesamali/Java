@@ -29,5 +29,39 @@ public class BST
       root = insert(root, value);
    }
    
+  //Recursive function to add values (integer) the tree
+  Node insert(Node root, int value)
+  {
+   //if tree is empty return a new node
+   if (root == null)
+   {
+      root = new Node(value);
+      return root;
+   }
+      
+      if(value < root.value)
+         root.left = insert(root.left, value);
+      else if (value > root.value)
+         root.right = insert(root.right, value);
+         
+      return root;
+  }
+  
+  //This method calls the order function
+  void inOrder()
+  {
+      order(root);
+  }
+  
+  void order(Node root)
+  {
+   if (root != null)
+   {
+      order(root.left);
+      System.out.println(root.value);
+      order(root.right);
+   }
+  }
+   
 
 }//End of full class
