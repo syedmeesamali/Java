@@ -50,17 +50,49 @@ public class BST
   //This method calls the order function
   void inOrder()
   {
-      order(root);
+      orderin(root);
+  }
+  
+  void preOrder()
+  {
+      orderpre(root);
+  }
+  
+  void postOrder()
+  {
+      orderpost(root);
   }
   
   //This will print the nodes inORDER
-  void order(Node root)
+  void orderin(Node root)
   {
    if (root != null)
    {
-      order(root.left);
+      orderin(root.left);
       System.out.println(root.value);
-      order(root.right);
+      orderin(root.right);
+   }
+  }
+  
+  //This will print the nodes preORDER
+  void orderpre(Node root)
+  {
+   if (root != null)
+   {
+      System.out.println(root.value);
+      orderpre(root.left);
+      orderpre(root.right);
+   }
+  }
+
+  //This will print the nodes postORDER
+  void orderpost(Node root)
+  {
+   if (root != null)
+   {
+      orderpost(root.left);
+      orderpost(root.right);
+      System.out.println(root.value);
    }
   }
   
