@@ -53,6 +53,7 @@ public class BST
       order(root);
   }
   
+  //This will print the nodes inORDER
   void order(Node root)
   {
    if (root != null)
@@ -63,11 +64,12 @@ public class BST
    }
   }
   
+  //Get size of the tree
   int size()
   {
    return size(root);
   }
-
+  //Implementation of size method
   int size(Node node)
   {
    if (node == null)
@@ -75,4 +77,5 @@ public class BST
    else
       return size(node.left) + 1 + size(node.right);
   }
-}//End of full class
+
+}//End of program

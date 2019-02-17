@@ -2,7 +2,6 @@ import java.util.*;
 
 public class testBST
 {
-
    public static void main(String[] args)
    {
       BST tree = new BST();
@@ -14,7 +13,9 @@ public class testBST
       tree.add(35);
       tree.add(7);
       tree.inOrder();
-      System.out.println("Height of tree is: " + tree.size());
-      
+      System.out.println("Height of tree is: " + tree.size());      
+
    }//End of main method
-}//End of full class
+}
+
+
