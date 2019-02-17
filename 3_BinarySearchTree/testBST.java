@@ -12,10 +12,13 @@ public class testBST
       tree.add(29);
       tree.add(35);
       tree.add(7);
-      tree.inOrder();
-      System.out.println("Height of tree is: " + tree.size());
+      System.out.println("Tree pre Order!");
       tree.preOrder();
-      tree.postOrder();   
+      System.out.println("Height of tree is: " + tree.size());
+      System.out.println("Tree in Order!");
+      tree.inOrder();
+      System.out.println("Tree post Order!");
+      tree.postOrder();
 
    }//End of main method
 }
