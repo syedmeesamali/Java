@@ -101,6 +101,7 @@ public class BST
   {
    return size(root);
   }
+
   //Implementation of size method
   int size(Node node)
   {
@@ -109,5 +110,20 @@ public class BST
    else
       return size(node.left) + 1 + size(node.right);
   }
+   
+   //Implementation of size method
+   public boolean find(int value)
+   {
+      return search(root, value);
+   }
+   
+   // A utility function to search a given key in BST 
+   public boolean search(Node root, int value) 
+   { 
+    if (root==null)
+        return false; 
+    return root.value==value || search(root.left, value) || search(root.right, value);
+   } //End of search method 
+
 
 }//End of program

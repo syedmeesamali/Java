@@ -12,14 +12,8 @@ public class testBST
       tree.add(29);
       tree.add(35);
       tree.add(7);
-      System.out.println("Tree pre Order!");
-      tree.preOrder();
-      System.out.println("Height of tree is: " + tree.size());
-      System.out.println("Tree in Order!");
-      tree.inOrder();
-      System.out.println("Tree post Order!");
-      tree.postOrder();
-
+      System.out.println("Find number 25 in tree:" + tree.find(25));
+      
    }//End of main method
 }
 
