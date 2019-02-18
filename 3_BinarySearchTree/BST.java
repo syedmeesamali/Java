@@ -102,7 +102,7 @@ public class BST
       return size(node.left) + 1 + size(node.right);
   }
    
-   //Implementation of size method
+   //Implementation of search method
    public boolean find(int value)
    {
       return search(root, value);
@@ -115,5 +115,18 @@ public class BST
         return false; 
     return root.value==value || search(root.left, value) || search(root.right, value);
    } //End of search method 
+
+   //Implementation of the compare method
+   public boolean compare(Node root)
+   {
+      return compare(root, root);
+   }
+   
+   // Function to compare two BSTs 
+   public boolean search(Node root, int value) 
+   { 
+   //Need to implement this method
+   } //End of compare method
+
 
 }//End of program
