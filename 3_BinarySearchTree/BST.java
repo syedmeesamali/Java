@@ -47,21 +47,12 @@ public class BST
       return root;
   }
   
-  //This method calls the order function
-  void inOrder()
-  {
-      orderin(root);
-  }
-  
-  void preOrder()
-  {
-      orderpre(root);
-  }
-  
-  void postOrder()
-  {
-      orderpost(root);
-  }
+  //Below three methods call the order function
+  void inOrder() {      orderin(root);   }
+
+  void preOrder() {     orderpre(root);  }
+
+  void postOrder() {    orderpost(root); }
   
   //This will print the nodes inORDER
   void orderin(Node root)
@@ -124,6 +115,5 @@ public class BST
         return false; 
     return root.value==value || search(root.left, value) || search(root.right, value);
    } //End of search method 
-
 
 }//End of program

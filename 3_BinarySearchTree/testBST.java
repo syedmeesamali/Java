@@ -12,7 +12,8 @@ public class testBST
       tree.add(29);
       tree.add(35);
       tree.add(7);
-      System.out.println("Find number 25 in tree:" + tree.find(25));
+      System.out.println("Find number 25 in tree:" + tree.find(17));
+      tree.postOrder();
       
    }//End of main method
 }
