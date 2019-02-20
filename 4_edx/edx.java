@@ -20,14 +20,29 @@ public class edx
       System.out.println(Arrays.toString(arr));
       makedouble(arr);
       System.out.println(Arrays.toString(arr));
+   
+      
+   int[][] myarr = new int[2][2];
+   int count = 0;
+   for (int row = 0; row < myarr.length; row++) 
+   {
+    for (int col = 0; col < myarr[row].length; col++) 
+      {
+        myarr[row][col] = count;
+        count++;
+        System.out.println(myarr[row][col]);
+      }
    }
    
-   public static void makedouble(int[] x)
+ } //End of main method
+ 
+ 
+ public static void makedouble(int[] x)
    {
       for (int i=0; i<x.length; i++)
       {
          x[i] = 2 * i;
       }
    }
-   
-}
+  
+} //End of class
