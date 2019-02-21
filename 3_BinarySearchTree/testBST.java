@@ -4,16 +4,25 @@ public class testBST
 {
    public static void main(String[] args)
    {
-      BST tree = new BST();
-      tree.add(12);
-      tree.add(22);
-      tree.add(18);
-      tree.add(25);
-      tree.add(29);
-      tree.add(35);
-      tree.add(7);
-      System.out.println("Find number 25 in tree:" + tree.find(17));
-      tree.postOrder();
+      BST tree1 = new BST();
+      BST tree2 = new BST();
+      tree1.add(12);
+      tree1.add(22);
+      tree1.add(18);
+      tree1.add(25);
+      tree1.add(29);
+      tree1.add(35);
+      tree1.add(7);
+      
+      tree2.add(12);
+      tree2.add(22);
+      tree2.add(18);
+      tree2.add(25);
+      tree2.add(29);
+      tree2.add(35);
+      tree2.add(7);
+      tree1.inOrder();
+      tree2.inOrder();
       
    }//End of main method
 }

@@ -117,15 +117,23 @@ public class BST
    } //End of search method 
 
    //Implementation of the compare method
-   public boolean compare(Node root)
+   public boolean compare(Node x, Node y)
    {
-      return compare(root, root);
+      return compare(x, y);
    }
    
    // Function to compare two BSTs 
-   public boolean search(Node root, int value) 
+   public boolean compareTrees(Node a, Node b) 
    { 
-   //Need to implement this method
+      if (a == null && b == null) //Both are empty
+         return true;
+      if (a != null && b != null)
+         return (a.value == b.value && compareTrees(a.left, b.left) && compareTrees(a.right, b.right));
+      
+      return false; //One is empty other is not
+         
+      
+         
    } //End of compare method
 
 
