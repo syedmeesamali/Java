@@ -23,7 +23,7 @@ public class testBST
       tree2.add(7);
       tree1.inOrder();
       tree2.inOrder();
-      
+      compare(tree1, tree2);
    }//End of main method
 }
 

@@ -119,15 +119,15 @@ public class BST
    //Implementation of the compare method
    public boolean compare(Node x, Node y)
    {
-      return compare(x, y);
+      return compareTrees(x, y);
    }
    
-   // Function to compare two BSTs 
-   public boolean compareTrees(Node a, Node b) 
+   // Function to compare two BSTs
+   public boolean compareTrees(Node root1, Node root2) 
    { 
-      if (a == null && b == null) //Both are empty
+      if (root1 == null && root2 == null) //Both are empty
          return true;
-      if (a != null && b != null)
+      if (root1 != null && root2 != null)
          return (a.value == b.value && compareTrees(a.left, b.left) && compareTrees(a.right, b.right));
       
       return false; //One is empty other is not
