@@ -1,37 +1,23 @@
 //Code completed for shereena assignment. Original not here.
+import java.util.*;
+
 public class LinkedList
 {
    public static void main(String[] args)
    {
-      int[] a = new int[5];
-      int[] b = new int[10];
-      int[] arr = {1,2,3};
-      System.out.println("Length of array a is: " + a.length);
-      System.out.println(Arrays.toString(b));
-      //Below portion will fill the empty b array with value 5
-      int val = 5;
-      for (int i=0; i<b.length; i++)
+      ArrayList<Integer> myList = new ArrayList<Integer>();
+      for (int j=0; j<10; j++)
       {
-         b[i] = val;
+         myList.add(j);
       }
-      System.out.println(Arrays.toString(b));
-      System.out.println(Arrays.toString(arr));
-      makedouble(arr);
-      System.out.println(Arrays.toString(arr));
-   
       
-   int[][] myarr = new int[2][2];
-   int count = 0;
-   for (int row = 0; row < myarr.length; row++) 
-   {
-    for (int col = 0; col < myarr[row].length; col++) 
+      int sum = 0;
+      for (int i=0; i<myList.size(); i++)
       {
-        myarr[row][col] = count;
-        count++;
-        System.out.println(myarr[row][col]);
+         sum += myList.get(i);
       }
-   }
-   
+      System.out.println("Sum of arraylist is: " + sum);
+            
  } //End of main method
  
  
