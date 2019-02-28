@@ -6,37 +6,67 @@ public class Ships
    public static void main(String[] args)
    {
       Scanner input = new Scanner(System.in);
-      int[][] human = new int[5][5];
-      int[][] computer = new int[5][5];
+      int[] ali = new int[5];
+      int[] jen = new int[5];
       int x, y;
+      /*
+      System.out.println("***Welcome to Battle of Ships****");
       System.out.println("   0 1 2 3 4 5 6 7 8 9");
       for (int i=0; i<10; i++)
       {
          System.out.println(i + " |" + "                   | " + i);
       }
       System.out.println("   0 1 2 3 4 5 6 7 8 9");
-
+      */
       //Below code with deploy the five ships of human player by looping and printing the coordinates
       
-      System.out.println("Lenght of human array: " + human.length);
       //Take input for the coordinates of ships
-      for (int row=0; row < human.length; row++)
+      /*
+      for (int row=0; row < ali.length; row++)
       {
-         for (int col=0; col < human[row].length; col++)
+         System.out.println("Enter X-Coordinate of Ali Ship # " + row);
+         x = input.nextInt();
+         System.out.println("Enter Y-Coordinate of Ali Ship # " + row);
+         y = input.nextInt();
+         System.out.println("   0 1 2 3 4 5 6 7 8 9");
+         for (int i=0; i<10; i++)
          {
-            System.out.println("Enter ["+row+"]"+"["+col+"]");
-            human[row][col] = input.nextInt();
+            System.out.println(i + " |" + "                   | " + i);
+            if (y == i)
+            {
+               System.out.print("\n");
+               System.out.print("#");
+            }
          }
+         System.out.println("   0 1 2 3 4 5 6 7 8 9");
+         System.out.print("#");
       }
-      for (int a=0; a<5; a++)
-      {
-         int[] sub = human[a];
-         for (int b=0; b<sub.length; b++)
-         {
-            System.out.println(sub[b] + " ");
-         }
-      }
-          
-   }      
+      */
+      makeGraph();
+              
+   }  //End of main    
   
+   //Below class will be used to print the overall graph where ships are to be plotted
+   public static void makeGraph()
+   {
+      int cols;
+         for (cols=0; cols<12; cols++)
+         {
+           if (cols == 0 || cols == 11)
+           {
+              System.out.println();
+              for (int reps=0; reps<10; reps++)
+              {
+                 System.out.print(" " + reps);
+              } //End of horizontal repetition of numbers
+              System.out.println();
+            } //End of if-block for horizontal numerical prints
+           else 
+           {
+              System.out.println();
+              System.out.printf("%-20s", cols-1);
+              System.out.print(cols-1);
+           } //This is loop when y is not 0 or 11
+         }
+   } //End of makeGraph method
 } //End of class
