@@ -6,8 +6,6 @@
  * Caveats: Invalid values will result in an error.(i.e integers for
  * grade) 
  */
-import java.util.*;
-
 public class Gpa
 {
 
