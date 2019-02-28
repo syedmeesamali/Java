@@ -6,26 +6,37 @@ public class Ships
    public static void main(String[] args)
    {
       Scanner input = new Scanner(System.in);
-      int[] player1 = new int[10];
-      int[] player2 = new int[10];
+      int[][] human = new int[5][5];
+      int[][] computer = new int[5][5];
       int x, y;
       System.out.println("   0 1 2 3 4 5 6 7 8 9");
       for (int i=0; i<10; i++)
       {
          System.out.println(i + " |" + "                   | " + i);
-         for (int j=0; j<10; j++)
-         {
-            
-         }
       }
       System.out.println("   0 1 2 3 4 5 6 7 8 9");
 
       //Below code with deploy the five ships of human player by looping and printing the coordinates
       
-      System.out.println("Enter X co-ordinate of your ship: ");
-      x = input.nextInt();
-      System.out.println("Enter Y co-ordinate of your ship: ");
-      y = input.nextInt();
+      System.out.println("Lenght of human array: " + human.length);
+      //Take input for the coordinates of ships
+      for (int row=0; row < human.length; row++)
+      {
+         for (int col=0; col < human[row].length; col++)
+         {
+            System.out.println("Enter ["+row+"]"+"["+col+"]");
+            human[row][col] = input.nextInt();
+         }
+      }
+      for (int a=0; a<5; a++)
+      {
+         int[] sub = human[a];
+         for (int b=0; b<sub.length; b++)
+         {
+            System.out.println(sub[b] + " ");
+         }
+      }
+          
    }      
   
 } //End of class
