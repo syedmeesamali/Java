@@ -5,8 +5,8 @@ public class TV
    int vol = 1;
    boolean on = false;
    
-   public TV  //Constructor
-   {
+   TV()  //Constructor
+   {      
    }
    
    public void turnON() //Turn TV on
@@ -19,6 +19,12 @@ public class TV
       on = false;
    }
 
+   public void setVolume(int newVolumeLevel) //Set certain volume
+   {
+         if (on && vol >= 1 && vol <= 7)
+         vol = newVolumeLevel;
+   }
+   
    public void setChannel(int newChannel) //Change channel
    {
       if (on && newChannel >= 1 && newChannel <= 120)
