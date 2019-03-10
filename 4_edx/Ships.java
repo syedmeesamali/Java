@@ -10,18 +10,6 @@ public class Ships
       int[] jen = new int[5];
       int x, y;
       /*
-      System.out.println("***Welcome to Battle of Ships****");
-      System.out.println("   0 1 2 3 4 5 6 7 8 9");
-      for (int i=0; i<10; i++)
-      {
-         System.out.println(i + " |" + "                   | " + i);
-      }
-      System.out.println("   0 1 2 3 4 5 6 7 8 9");
-      */
-      //Below code with deploy the five ships of human player by looping and printing the coordinates
-      
-      //Take input for the coordinates of ships
-      /*
       for (int row=0; row < ali.length; row++)
       {
          System.out.println("Enter X-Coordinate of Ali Ship # " + row);
