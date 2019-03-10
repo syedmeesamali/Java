@@ -9,14 +9,26 @@ public class TV
    {
    }
    
-   public void turnON() 
+   public void turnON() //Turn TV on
    {
       on = true;
    }
 
-   public void turnOFF() 
+   public void turnOFF() //Turn TV off
    {
       on = false;
+   }
+
+   public void setChannel(int newChannel) //Change channel
+   {
+      if (on && newChannel >= 1 && newChannel <= 120)
+         channel = newChannel;
+   }
+
+   public void channelUp(int newChannel) //Turn up the channel
+   {
+      if (on && newChannel < 120)
+         channel++;
    }
 
 
