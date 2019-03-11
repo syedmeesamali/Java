@@ -10,6 +10,13 @@ public class byteReader
       int w, h;
       byte[] byteData;
       int[] intData;
-                  
+      try 
+      {
+         FileInputStream in = new FileInputStream("textfile.txt");
+         FileOutputStream out = new FileOutputStream("new.txt");         
+      } catch (Exception e)
+      {
+         
+      }
    }  
 } 
