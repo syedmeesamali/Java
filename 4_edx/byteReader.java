@@ -18,11 +18,11 @@ public class byteReader
       {
          FileInputStream in = new FileInputStream("textfile.txt");
          FileOutputStream out = new FileOutputStream("new.txt");
-
-         int c = in.read();
-         while ((c != -1 ))
+         int c;
+         while ((c = in.read()) != -1 )
          {
             out.write(c);
+            System.out.println((char)(c));
          }
       } catch (FileNotFoundException e)
       {
