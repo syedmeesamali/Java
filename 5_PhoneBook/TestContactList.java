@@ -24,7 +24,7 @@ public class TestContactList {
          Create a new ContactList object with the name of the
          contact list file.
          */
-         ContactList2 cl = new ContactList2("MyAddressBook.txt");
+         ContactList cl = new ContactList("MyAddressBook.txt");
            
          if(choice == ONE)  {
             System.out.print("Enter name to find: ");
