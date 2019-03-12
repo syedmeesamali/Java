@@ -72,6 +72,7 @@ public class ContactList2
           //try to wrtie the data
           try
           {
+            out.write("\n");
             out.write(details);
           }
           catch(IOException ioe)
@@ -81,8 +82,7 @@ public class ContactList2
           //try to close the file
           try
           {
-             out.close();
-             
+             out.close();         
           }
           catch(IOException ioe)
           {
@@ -105,16 +105,12 @@ public class ContactList2
     */
     public void display_names()
     {
-      
       //try to open the file for reading
-      FileReader br = null;
+      BufferedReader br = null;
       try
       {
          //delare variables to hold file types
-         br = new FileReader(filename);
-         int a;
-         a = br.read();
-         
+         br = new BufferedReader(new FileReader(filename));
       }
       catch(IOException ioe)
       {
@@ -127,11 +123,17 @@ public class ContactList2
       count each record that is read 
       */
       int counter = 0; //record counter
+      String line = null;
       try
       {
          //read the first record
-         int b = br.read();
-         //while the record is not null, display the record, count the record
+         line = br.readLine();         //while the record is not null, display the record, count the record
+         while (line != null)
+         {
+            counter++;
+            System.out.println("Record # " + counter + " is: " + line);
+            line = br.readLine();
+         }
          
       }
       catch(IOException ioe)
