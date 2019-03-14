@@ -3,14 +3,7 @@ import java.io.*;
 
 public class ContactList
 {
-   /**
-   Contact list file name 
-   */
-   private String filename;
-   
-   /**
-   ContactList constructor accepts a String parameter
-   */
+  private String filename;
    public ContactList(String inFileName)
    {
       filename = inFileName;
@@ -23,23 +16,19 @@ public class ContactList
       System.out.println("Enter last name: ");      
       String lastName = input.nextLine();
       
-      //the Last_name must not be empty
        if( lastName != "" )
        {
-         //get the first name and the phone
          System.out.println("Enter first name: ");
          String firstName = input.nextLine();
          
          System.out.println("Enter phone number: ");
          String phone = input.nextLine();
          
-          //create the output string
           String details = firstName + " " + lastName + " :" + phone;
  
-          //delare variables to hold file types
           File file = new File(filename);
           FileWriter out = null;
-          //try to open the file for writing - append the data
+ 
           try
           {
             out = new FileWriter(filename, true);
@@ -89,9 +78,25 @@ public class ContactList
     {
       
       FileReader br = null;
+      String line = null;
+      int counter2 = 0;
+      String id = null;
+
       try
       {
         br = new FileReader(filename);
+        line = br.readLine();
+        id = LastName;
+        while (line != null)
+        {
+            counter2++;
+            String lineVar = line.split(" ");
+            if (lineVar.trim().contains(id))
+            {
+               System.out.println(line);
+            }
+            line.readLine();
+        }
          
       }
       catch(IOException ioe)
