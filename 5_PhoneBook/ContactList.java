@@ -77,27 +77,31 @@ public class ContactList
     public void search(String LastName)
     {
       
-      FileReader br = null;
+      BufferedReader br = null;
       String line = null;
       int counter2 = 0;
       String id = null;
 
       try
       {
-        br = new FileReader(filename);
+        br = new BufferedReader(new FileReader(filename));
         line = br.readLine();
         id = LastName;
-        while (line != null)
+        while (line != null) //Check till end of file
         {
-            counter2++;
-            String lineVar = line.split(" ");
-            if (lineVar.trim().contains(id))
+            //Make parts of each line as separate words
+            String[] lineVar = line.toLowerCase().split(" ");
+            for (String word: lineVar)
             {
-               System.out.println(line);
+               if(word.equals(id))
+               {
+                  counter2++;
+                  System.out.println(line);
+               }
             }
-            line.readLine();
-        }
-         
+            
+            line = br.readLine();
+        } //End of while statement
       }
       catch(IOException ioe)
       {
