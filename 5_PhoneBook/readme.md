@@ -1,3 +1,6 @@
 Homework assignment for my student. 
-Implemented fileRead and fileWrite features from Java to read from phonebook and then
-write in order to update the records.
+
+This program will read a "phonebook.txt" file and if required can do the following functions.
+1. Read all the existing records from file
+2. Add new record to phonebook file
+3. Search for a particular record
