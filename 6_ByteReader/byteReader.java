@@ -8,22 +8,16 @@ public class byteReader
    public static void main(String[] args)
    {
       byte r[], g[], b[];
-      int entries;
-      int curPos = 0;
-      int w, h;
       byte[] byteData;
-      int[] intData;
       
       try 
       {
-         FileInputStream in = new FileInputStream("textfile.txt");
-         FileOutputStream out = new FileOutputStream("new.txt");
+         File file = new File("white.bmp")
+         FileInputStream in = new FileInputStream(file);
+         DataInputStream input = new DataInputStream(in);
          int c;
-         while ((c = in.read()) != -1 )
-         {
-            out.write(c);
-            System.out.println((char)(c));
-         }
+         
+
       } catch (FileNotFoundException e)
       {
          e.printStackTrace();
@@ -31,5 +25,5 @@ public class byteReader
       {
          e.printStackTrace();
       }
-   }  
-} 
+   }   //End of main
+} //End of class
