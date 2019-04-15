@@ -3,8 +3,6 @@ import java.awt.*;
 import javax.swing.*;
 import java.util.*;
 class picpuzzle2 extends JFrame implements ActionListener{
-public String[] paths1;
-public JButton[] bNames;
 
 JButton b1,b2,b3,b4,b5,b6,b7,b8,b9;
 JButton sample,starB;
@@ -56,31 +54,15 @@ for (int i=1; i<10; i++)
 {
    JButton button = new JButton();
    buttonMap.put(String.valueOf(i), button);
-   System.out.println("Button: " + i + "name is" + button.getText());
+   button.setIcon(ic[i-1]);
+   //System.out.println("Button: " + i + "name is" + button.getText());
+   System.out.println(buttonMap.entrySet());
 }
 
+ArrayList<JButton> testButton = new ArrayList<JButton>(); // Button
+        JButton newButton = new JButton("" + i); // Text
+        newButton.setName("" + i);
 
-/*
-//JButton[] bNames = {b1, b2, b3, b4, b5, b6, b7, b8, b9};
-JButton bNames[];
-bNames = new JButton[9];
-for(int i = 0; i < 9; i++) {
-    bNames[i] = new JButton(ic[i]);
-}
-
-//bNames[0] = new JButton(ic[0]);
-System.out.println("button name:" + bNames[0].getName() + " : " + bNames[0].getIcon());
-
-
-//JButton[] b = new JButton[9];
-for(int i=0; i<9; i++)
-{
-   JButton "b"+i = new JButton(ic[i]);
-   System.out.println("button name:" + bNames[i].getText() + " : " + bNames[i].getIcon());
-}
-
-*/
-/*
 b1=new JButton(ic1);
 b2=new JButton(ic2);
 b3=new JButton(ic3);
@@ -90,7 +72,7 @@ b6=new JButton(ic6);
 b7=new JButton(ic7);
 b8=new JButton(ic8);
 b9=new JButton(ic9);
-*/
+
 
 b1.setBounds(10,80,100,100);
 b2.setBounds(110,80,100,100);
