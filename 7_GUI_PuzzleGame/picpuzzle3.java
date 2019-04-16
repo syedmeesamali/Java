@@ -10,13 +10,7 @@ public String[] names = {"b1","b2","b3","b4","b5","b6","b7","b8","b9"};
 
 JButton sample,starB;
 Icon star;
-
-Icon ic0=new ImageIcon("pic/starB0.jpg");
-Icon ic10=new ImageIcon("pic/starB10.jpg");
-Icon ic20=new ImageIcon("pic/starB20.jpg");
 Icon samicon1=new ImageIcon("pic/main.jpg");
-Icon samicon2=new ImageIcon("pic/main2.jpg");
-Icon samicon3=new ImageIcon("pic/main3.jpg");
 
 ImageIcon[] ic = {new ImageIcon("pic/1.jpg"), new ImageIcon("pic/5.jpg"), new ImageIcon("pic/2.jpg"), new ImageIcon("pic/7.jpg"),
 new ImageIcon("pic/4.jpg"), new ImageIcon("pic/6.jpg"), new ImageIcon("pic/3.jpg"), new ImageIcon("pic/8.jpg"), new ImageIcon("pic/9.jpg")};
@@ -52,69 +46,49 @@ buttons[6].setBounds(10,280,100,100);
 buttons[7].setBounds(110,280,100,100);
 buttons[8].setBounds(210,280,100,100);
 
+//Button to display the full picture
 sample=new JButton(samicon1);
-sample.setBounds(380,100,200,200);
+sample.setBounds(390,100,200,200);
 
-JLabel l1=new JLabel("Sample:");
-l1.setBounds(330,200,70,20);
-JLabel l2=new JLabel("NOTE:: icon has power to swap with neighbour icon=>");
-l2.setBounds(5,15,500,20);
-JLabel l3=new JLabel("click sample picture to next puzzle");
-l3.setBounds(380,320,200,20);
-l3.setForeground(Color.red);
+JLabel l1=new JLabel("Full puzzle");
+l1.setBounds(330,180,150,20);
 
-starB=new JButton(ic0);
-starB.setBounds(330,5,50,50);
+//Make second button in array as star button
 star=buttons[1].getIcon();
 
-add(sample);add(l1);add(l2);add(starB);add(l3);
-
-
+add(sample);add(l1);
 sample.addActionListener(this);
 setLayout(null);
-setSize(600,500);
+setSize(650,500);
 setVisible(true);
 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 }
 
-public void actionPerformed(ActionEvent e){
-
-for (int j=0; j<9; j++)
+//Below method takes care of the button press event
+public void actionPerformed(ActionEvent e)
 {
 
-if(e.getSource()==buttons[j])
-{
-    Icon s1=buttons[j].getIcon();
-      if(buttons[j+1].getIcon()==star)
-      {
-        buttons[j+1].setIcon(s1);
-        buttons[j].setIcon(star);
-        star = buttons[j+1].getIcon();
-      } 
-}//end of if
-}
-   if(e.getSource()==sample)
+   for (int j=0; j<9; j++)
    {
-      Icon s1=sample.getIcon();
-      if(s1==samicon3)
-      {
-      sample.setIcon(samicon1);
-      //Set icons and bounds of buttons
-      for (int i=0; i<9; i++)
-      {
-         buttons[i].setIcon(ic[i]);
-      }
 
-      star=buttons[8].getIcon();
-      starB.setIcon(ic0);
-      }//eof if
+      if(e.getSource()==buttons[j])
+      {
+         Icon s1=buttons[j].getIcon();    //Save state of current button pressed
+            if(buttons[j+1].getIcon()==star) //If the next button to current is a STAR
+            {
+            buttons[j+1].setIcon(s1);  //Shuffle the current to next one
+            buttons[j].setIcon(star);  //Move the star to the button pressed
+            star = buttons[j+1].getIcon();   //Star will be the button next to the one pressed
+            } 
+      }//end of if
 
-   }
+   }//End of for loop
+
 
 }//end of actionPerformed
 
-   //Main entry point statements
-   public static void main(String args[])
+//Main entry point statements
+public static void main(String args[])
    {
       new picpuzzle3();
    }  //end of main
