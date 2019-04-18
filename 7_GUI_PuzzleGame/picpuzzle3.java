@@ -31,8 +31,6 @@ for (int n=0; n<9; n++)
 for (int i=0; i<9; i++)
 {
    buttons[i].setIcon(ic[i]);
-   System.out.println("Button name: " + buttons[i].getText());
-   System.out.println("Button icon: " + buttons[i].getIcon());
 }
 
 //Below is definition for setting boundaries of the buttons
@@ -70,15 +68,15 @@ public void actionPerformed(ActionEvent e)
 
    for (int j=0; j<9; j++)
    {
-
       if(e.getSource()==buttons[j])
       {
          Icon s1=buttons[j].getIcon();    //Save state of current button pressed
+         System.out.println("Button: " + buttons[j].getText() + " pressed");
             if(buttons[j+1].getIcon()==star) //If the next button to current is a STAR
             {
             buttons[j+1].setIcon(s1);  //Shuffle the current to next one
             buttons[j].setIcon(star);  //Move the star to the button pressed
-            star = buttons[j+1].getIcon();   //Star will be the button next to the one pressed
+            star = buttons[j+2].getIcon();   //Star will be the button next to the one pressed
             } 
       }//end of if
 
