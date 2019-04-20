@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.awt.event.ActionListener;
 import java.text.*;
 
-class picpuzzle3 extends JFrame implements ActionListener
+class picpuzzle extends JFrame implements ActionListener
 {
 
 public static int countPress = 0;
@@ -34,7 +34,7 @@ ImageIcon[] ic3 = {new ImageIcon("pic/22.jpg"), new ImageIcon("pic/24.jpg"), new
 new ImageIcon("pic/28.jpg"), new ImageIcon("pic/21.jpg"), new ImageIcon("pic/23.jpg"), 
 new ImageIcon("pic/27.jpg"), new ImageIcon("pic/26.jpg"), new ImageIcon("pic/29.jpg")};
 
-picpuzzle3()
+picpuzzle()
 {
 
 super("picture puzzle 3");
@@ -128,7 +128,6 @@ public void actionPerformed(ActionEvent e)
                 clockTime = duration;
                 ((javax.swing.Timer)event.getSource()).stop(); // stop the Timer
                 my_timer.setText("Time Is UP"); // remove if you want or maybe just ""
-                //resetB.doClick();
                 return;
             }
                SimpleDateFormat df = new SimpleDateFormat("mm:ss:SSS");
@@ -151,14 +150,12 @@ if(e.getSource()==buttons[j])
     {
     Icon s1=buttons[j].getIcon();  //Save the icon for last button
     Icon s2=buttons[0].getIcon(); //Save the icon for first button
-    System.out.println(buttons[j].getText() + " pressed");
     buttons[0].setIcon(s1); //Shift the current icon to first
     buttons[j].setIcon(s2);   //Shift the icon of next button to current
     }
     
     Icon s1=buttons[j].getIcon();  //Save the icon for current button pressed
     Icon s2=buttons[j+1].getIcon(); //Save the icon for button next to current
-    System.out.println(buttons[j].getText() + " pressed");
     buttons[j+1].setIcon(s1); //Shift the current icon to next button
     buttons[j].setIcon(s2);   //Shift the icon of first to last button
 
@@ -199,7 +196,6 @@ if(e.getSource()==sample)
 //METHOD TO RESET ICONS
 if(e.getSource()==resetB) 
 {
-   System.out.println("reset pressed");
    if (sample.getIcon() == samicon2)
    {
       for (int i=0; i<9; i++)
@@ -231,7 +227,7 @@ public static void main(String args[])
 {
   SwingUtilities.invokeLater(new Runnable(){
             public void run() {
-                new picpuzzle3();
+                new picpuzzle();
             }
   
  // new picpuzzle3());
