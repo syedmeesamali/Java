@@ -3,15 +3,15 @@ import javax.swing.*;
 import java.util.*;
 import java.awt.event.*;
 import java.awt.event.ActionListener;
+import java.text.*;
 
 class picpuzzle3 extends JFrame implements ActionListener
 {
 
-private final static int FIVE_SECONDS = 5000;
-private final static int count = 0;
-private javax.swing.Timer timer = null;
+public static int countPress = 0;
 public JButton[] buttons = new JButton[9];
 public String[] names = {"b1","b2","b3","b4","b5","b6","b7","b8","b9"};
+public JLabel my_timer;
 
 JButton sample, starB, resetB;
 
@@ -67,9 +67,9 @@ buttons[8].setBounds(210,280,100,100);
 sample=new JButton(samicon1); //Big button showing the completed puzzle
 sample.setBounds(380,100,200,200);
 
-JLabel my_timer=new JLabel("Timer!");
-my_timer.setBounds(100,50,70,20);
-
+my_timer=new JLabel("Press any button to begin countdown!"); //New timer label for the timing
+my_timer.setBounds(100,50,250,20);
+add(my_timer); //Add the timer to scene
 JLabel l1=new JLabel("Sample:");
 l1.setBounds(330,200,70,20);
 JLabel l3=new JLabel("Click sample picture for next puzzle");
@@ -83,7 +83,7 @@ resetB=new JButton("Reset"); //Button to reset puzzle
 resetB.setBounds(450,350,100,50);
 
 add(sample);add(resetB);
-add(l1);add(l3);add(my_timer);
+add(l1);add(l3);
 
 sample.addActionListener(this);
 resetB.addActionListener(this);
@@ -93,27 +93,54 @@ setSize(600,500);
 setVisible(true);
 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-//Below is implementation of javax timer
-timer = new javax.swing.Timer(FIVE_SECONDS, new ActionListener() 
-{
-   public void actionPerformed(ActionEvent evt) 
-   {
-         long startTime = System.currentTimeMillis();
-         int counter = 0;
-         counter++;
-         if (counter > 100000)
-         {
-            timer.stop();
-         }
-         my_timer.setText(String.valueOf(counter));
-   }
-});
-timer.start();
 }
 
 //BELOW METHOD IS FOR ALL THE BUTTON CLICKS AND ACTIONS PERFORMED EVENTS
+
 public void actionPerformed(ActionEvent e)
 {
+    countPress++;
+    System.out.println("Any button pressed: " + String.valueOf(countPress) + " times");
+    //public boolean timerstate;
+    int seconds = 5;  // supply timer duration in seconds
+    final long duration = seconds * 1000;   // calculate to milliseconds
+    final javax.swing.Timer timer = new javax.swing.Timer(10, new ActionListener() //Initialize timer for 10 seconds
+    {    
+        long startTime = -1; 
+        public void actionPerformed(ActionEvent event) 
+        {
+        
+         //if (countPress == 1) //Check if any button pressed more than once. First press will initialize timer
+         //{
+         {  //Start of BLOCK for timer to work
+            if (startTime < 0 && countPress < 2) 
+            {
+                startTime = System.currentTimeMillis();
+            }
+            long now = System.currentTimeMillis();
+            long clockTime = now - startTime;
+            if (countPress < 2 && clockTime < duration)
+            {
+               SimpleDateFormat df = new SimpleDateFormat("mm:ss:SSS");
+               my_timer.setText(df.format(duration - clockTime));
+            } else if (clockTime >= duration) //Once clocktime reaches duration seconds 
+            {
+                clockTime = duration;
+                ((javax.swing.Timer)event.getSource()).stop(); // stop the Timer
+                my_timer.setText("Time Is UP"); // remove if you want or maybe just ""
+                //resetB.doClick();
+                return;
+            }
+               SimpleDateFormat df = new SimpleDateFormat("mm:ss:SSS");
+               my_timer.setText(df.format(duration - clockTime));
+             
+          } //END OF block
+          
+         // } //enf of if - nothing if countPress other than one
+        } //Timer related actionPerformed block
+    });
+    timer.setInitialDelay(0);
+    timer.start();
 
 for (int j=0; j<9; j++) //Main method to shuffle the puzzle
 {
@@ -202,7 +229,12 @@ if(e.getSource()==resetB)
 //Main entry point statements
 public static void main(String args[])
 {
-  new picpuzzle3();
-}  //end of main
-
+  SwingUtilities.invokeLater(new Runnable(){
+            public void run() {
+                new picpuzzle3();
+            }
+  
+ // new picpuzzle3());
+});  //end of main
+}
 }//end of class
