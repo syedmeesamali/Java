@@ -9,6 +9,7 @@ class picpuzzle3 extends JFrame implements ActionListener
 
 private final static int FIVE_SECONDS = 5000;
 private final static int count = 0;
+private javax.swing.Timer timer = null;
 public JButton[] buttons = new JButton[9];
 public String[] names = {"b1","b2","b3","b4","b5","b6","b7","b8","b9"};
 
@@ -93,27 +94,21 @@ setVisible(true);
 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 //Below is implementation of javax timer
-my_timer.addActionListener(new ActionListener() 
-{
-   count++;
-   public void actionPerformed(ActionEvent evt) {
-         if (count < 100000) {
-            my_timer.setText(count);
-            timer.start();
-         } else {
-            timer.stop();
-         }  
-   }
-});
-
-timer = new Timer(ONE_SECOND, new ActionListener() 
+timer = new javax.swing.Timer(FIVE_SECONDS, new ActionListener() 
 {
    public void actionPerformed(ActionEvent evt) 
    {
-         
+         long startTime = System.currentTimeMillis();
+         int counter = 0;
+         counter++;
+         if (counter > 100000)
+         {
+            timer.stop();
+         }
+         my_timer.setText(String.valueOf(counter));
    }
 });
-
+timer.start();
 }
 
 //BELOW METHOD IS FOR ALL THE BUTTON CLICKS AND ACTIONS PERFORMED EVENTS
