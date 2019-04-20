@@ -7,12 +7,10 @@ import java.text.*;
 
 class picpuzzle extends JFrame implements ActionListener
 {
-
 public static int countPress = 0;
 public JButton[] buttons = new JButton[9];
 public String[] names = {"b1","b2","b3","b4","b5","b6","b7","b8","b9"};
 public JLabel my_timer;
-
 JButton sample, starB, resetB;
 
 Icon ic0=new ImageIcon("pic/starB0.jpg");
@@ -36,8 +34,7 @@ new ImageIcon("pic/27.jpg"), new ImageIcon("pic/26.jpg"), new ImageIcon("pic/29.
 
 picpuzzle()
 {
-
-super("picture puzzle 3");
+super("Picture Puzzle");
 
 //Add buttons with names from string array
 for (int n=0; n<9; n++)
@@ -70,6 +67,8 @@ sample.setBounds(380,100,200,200);
 my_timer=new JLabel("Press any button to begin countdown!"); //New timer label for the timing
 my_timer.setBounds(100,50,250,20);
 add(my_timer); //Add the timer to scene
+Font font1 = new Font("SansSerif", Font.BOLD, 20);
+my_timer.setFont(font1);
 JLabel l1=new JLabel("Sample:");
 l1.setBounds(330,200,70,20);
 JLabel l3=new JLabel("Click sample picture for next puzzle");
@@ -109,9 +108,6 @@ public void actionPerformed(ActionEvent e)
         long startTime = -1; 
         public void actionPerformed(ActionEvent event) 
         {
-        
-         //if (countPress == 1) //Check if any button pressed more than once. First press will initialize timer
-         //{
          {  //Start of BLOCK for timer to work
             if (startTime < 0 && countPress < 2) 
             {
@@ -134,8 +130,7 @@ public void actionPerformed(ActionEvent e)
                my_timer.setText(df.format(duration - clockTime));
              
           } //END OF block
-          
-         // } //enf of if - nothing if countPress other than one
+
         } //Timer related actionPerformed block
     });
     timer.setInitialDelay(0);
