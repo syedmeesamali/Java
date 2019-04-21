@@ -138,6 +138,12 @@ public void actionPerformed(ActionEvent e)
 
 for (int j=0; j<9; j++) //Main method to shuffle the puzzle
 {
+String text = my_timer.getText();
+if (text == "Time Is UP")
+{
+   buttons[j].setEnabled(false);
+} else
+{
 try {
 if(e.getSource()==buttons[j])
 {
@@ -154,12 +160,12 @@ if(e.getSource()==buttons[j])
     buttons[j+1].setIcon(s1); //Shift the current icon to next button
     buttons[j].setIcon(s2);   //Shift the icon of first to last button
 
-}//end of error
+}//end of main if
 }
 
 catch (Exception err) {} 
 } // End of for loop
-
+}
 //METHOD TO MOVE TO NEXT PUZZLE
 if(e.getSource()==sample)
 {
