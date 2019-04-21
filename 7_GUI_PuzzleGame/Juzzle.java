@@ -28,9 +28,9 @@ public JLabel my_timer; // declaring Jlabel for the time
    JLabel scoreArea;
 JButton sample,GIF,resetB; // declaring variables for buttons
 
-Icon sampleImage1=new ImageIcon("juzzle/sampleImage1.jpg");//get the first sampleImage
-Icon sampleImage2=new ImageIcon("juzzle/sampleImage2.jpg");//get the second sampleImage
-Icon sampleImage3=new ImageIcon("juzzle/sampleImage3.jpg");//get the third sampleImage
+Icon sampleImage1=new ImageIcon("juzzle/main.jpg");//get the first sampleImage
+Icon sampleImage2=new ImageIcon("juzzle/main2.jpg");//get the second sampleImage
+Icon sampleImage3=new ImageIcon("juzzle/main3.jpg");//get the third sampleImage
 Icon gif =new ImageIcon("juzzle/gif.gif");
 
 //getting the pieces of the first image
