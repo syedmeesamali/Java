@@ -1,12 +1,12 @@
 public class Name
 {
-  public String title;
+  public String name;
   public char gender;
-  public Name(String title, char gender) // Constructor method
+  public Name(){ }   //Constructor
+  public Name(String name, char gender) // Constructor method
   {
-   this.title = title;
+   this.name = name;
    this.gender = gender;
   }
   
-}//End of main public class
-
+}//End of class Name
