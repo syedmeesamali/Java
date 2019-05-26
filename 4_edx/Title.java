@@ -1,39 +1,17 @@
-public class Title 
-{
-  public String title;
-  public char gender;
-  public Title(String titleVal, char genderVal)
-  {
-      title = titleVal;
-      gender = genderVal;
-  }
-
-class Name extends Title 
+public class Title extends Name
 {
   private String fName;
   private String lName;
-
-  public Name(String fName,String lName)
+  
+  super(title, gender);
+  public Title(String fName,String lName) // Constructor method for Title - This class already inherits from "Name" class
   {
     this.fName = fName;
     this.lName = lName;
-    
   }
   
-  public void disp_name()
+  public void disp_name() //Display first and last name method
     {
       System.out.println(fName + "  " + lName);
     }
 }
-
-
-   public static void main(String[] args)
-   {
-
-      Name newObj = new Name("Alex", "M");
-      System.out.println("Name is: " + newObj.Name);
-              
-   }  //End of main 
-
-}
-
