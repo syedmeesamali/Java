@@ -12,11 +12,11 @@ public class byteReader
       
       try 
       {
-         File file = new File("white.bmp")
+         File file = new File("white.bmp");
          FileInputStream in = new FileInputStream(file);
          DataInputStream input = new DataInputStream(in);
          int c;
-         
+         System.out.println("Successfully loaded the BMP file");
 
       } catch (FileNotFoundException e)
       {
