@@ -9,6 +9,10 @@ public class byteReader
    {
       byte r[], g[], b[];
       byte[] byteData;
+      String s = "abc";
+      byte[] bt = s.getBytes();
+      
+      System.out.println(Integer.toBinaryString(bt[0]));
       
       try 
       {
