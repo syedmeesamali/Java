@@ -12,11 +12,14 @@ public class byteReader
       String s = "abc";
       byte[] bt = s.getBytes();
       Byte c = 87 & 101;
-
+      Byte d = 87 | 101;
       System.out.println(Integer.toBinaryString(bt[0]));
       System.out.println(Integer.toBinaryString(87));
       System.out.println(Integer.toBinaryString(101));
+      System.out.println(c);
       System.out.println(Integer.toBinaryString(c));
+      System.out.println(d);
+      System.out.println(Integer.toBinaryString(d));
       
       try 
       {
