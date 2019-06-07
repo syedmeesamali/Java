@@ -19,13 +19,12 @@ public class byteReader
          File file = new File("white.bmp");
          FileInputStream in = new FileInputStream(file);
          DataInputStream input = new DataInputStream(in);
-         BufferedReader br = new BufferedReader(input);
          
          System.out.println("Successfully loaded the BMP file");
          System.out.println("Byte array is: " + bt.length);
          while ((len = in.read(bt)) != -1)
          {
-            os.write(bt, off, len);
+            os.write(bt, 0, len);
          }
 
       } catch (FileNotFoundException e)
