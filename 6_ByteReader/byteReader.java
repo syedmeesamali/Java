@@ -10,6 +10,7 @@ public class byteReader
       byte r[], g[], b[];
       String s = "abc";
       ByteArrayOutputStream os = new ByteArrayOutputStream(); 
+
       // Tentative size to hold up to 1024 bytes in a buffer
       byte[] bt = new byte[1024];
       int len;
@@ -25,6 +26,13 @@ public class byteReader
          while ((len = in.read(bt)) != -1)
          {
             os.write(bt, 0, len);
+         }
+         PrintStream fileOut = new PrintStream("./out.txt");
+         System.setOut(fileOut);
+         //Below code is to display the various elements of the BMP byte array
+         for (int x = 0; x < bt.length; x++)
+         {
+         System.out.println("Element at index " + x + " : "+ bt[x]);
          }
 
       } catch (FileNotFoundException e)
