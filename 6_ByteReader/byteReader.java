@@ -8,17 +8,25 @@ public class byteReader
    public static void main(String[] args)
    {
       byte r[], g[], b[];
-      byte[] byteData;
       String s = "abc";
-      byte[] bt = s.getBytes();
-      
+      ByteArrayOutputStream os = new ByteArrayOutputStream(); 
+      // Tentative size to hold up to 1024 bytes in a buffer
+      byte[] bt = new byte[1024];
+      int len;
+
       try 
       {
          File file = new File("white.bmp");
          FileInputStream in = new FileInputStream(file);
          DataInputStream input = new DataInputStream(in);
          BufferedReader br = new BufferedReader(input);
+         
          System.out.println("Successfully loaded the BMP file");
+         System.out.println("Byte array is: " + bt.length);
+         while ((len = in.read(bt)) != -1)
+         {
+            os.write(bt, off, len);
+         }
 
       } catch (FileNotFoundException e)
       {
