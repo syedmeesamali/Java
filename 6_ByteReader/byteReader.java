@@ -12,6 +12,7 @@ public class byteReader
       // Tentative size to hold up to 1024 bytes in a buffer
       byte[] bt = new byte[1024];
       int len;
+      //For randomizing of bytes / pixels later
 
       try 
       {
@@ -22,6 +23,7 @@ public class byteReader
          FileOutputStream output = new FileOutputStream("output.bmp"); //This is the OUTPUT BMP image file
          System.out.println("Successfully loaded the BMP file");
          System.out.println("Byte array is: " + bt.length);
+         
          while ((len = in.read(bt)) != -1)
          {
             os.write(bt, 0, len);
@@ -33,6 +35,8 @@ public class byteReader
          for (int x = 0; x < bt.length; x++)
          {
          System.out.println("Element at index " + x + " : "+ bt[x]);
+         int rand = (int)(Math.random() * 2);
+         System.out.println("Random item:" + rand);
          }
 
       } catch (FileNotFoundException e)
