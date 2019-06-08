@@ -7,8 +7,6 @@ public class byteReader
 {
    public static void main(String[] args)
    {
-      byte r[], g[], b[];
-      String s = "abc";
       ByteArrayOutputStream os = new ByteArrayOutputStream(); 
 
       // Tentative size to hold up to 1024 bytes in a buffer
@@ -21,11 +19,13 @@ public class byteReader
          FileInputStream in = new FileInputStream(file);
          DataInputStream input = new DataInputStream(in);
          
+         FileOutputStream output = new FileOutputStream("output.bmp"); //This is the OUTPUT BMP image file
          System.out.println("Successfully loaded the BMP file");
          System.out.println("Byte array is: " + bt.length);
          while ((len = in.read(bt)) != -1)
          {
             os.write(bt, 0, len);
+            output.write(bt);
          }
          PrintStream fileOut = new PrintStream("./out.txt");
          System.setOut(fileOut);
