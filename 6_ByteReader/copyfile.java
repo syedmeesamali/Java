@@ -9,9 +9,13 @@ public class copyfile
  * args[0] - original file
  * args[1] - result file
  */
-   public static void main(String[] args)
+   public static void main(String[] args) throws IOException
    {
-
+      if (args.length != 2)
+      {
+         System.out.println("Usage: java copy sourceFile targetFile");
+         System.exit(1);
+      }
       try 
       {
          
