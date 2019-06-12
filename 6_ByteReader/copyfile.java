@@ -1,8 +1,6 @@
 import java.io.*;
 
 //This java program copies one file to another file. Both names are provided.
-//------------------------
-
 public class copyfile
 {
 /** Main method
@@ -44,10 +42,8 @@ public class copyfile
             output.write((byte)r);
             copied++;
          }
-      }
-
       //Display the file size
       System.out.println(copied + " bytes copied !");
-
+      }
    }   //End of main
 } //End of class
