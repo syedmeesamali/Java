@@ -16,6 +16,14 @@ public class copyfile
          System.out.println("Usage: java copy sourceFile targetFile");
          System.exit(1);
       }
+      
+      //Check for the source file
+      File sourceFile = new File(args[0]);
+      if (!sourceFile.exists())
+      {
+         System.out.println("Source file: " + args[0] + "doesn't exist!");
+         System.exit(2);
+      }
       try 
       {
          
