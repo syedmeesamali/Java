@@ -34,9 +34,20 @@ public class copyfile
       }
 
       try 
-      {
-         
+      (
+         BufferedInputStream input = new BufferedInputStream(new FileInputStream(sourceFile));
+         BufferedOutputStream output = new BufferedOutputStream(new FileOutputStream(targetFile));
+      ) {
+         int r, copied = 0;
+         while((r = input.read()) != -1)
+         {
+            output.write((byte)r);
+            copied++;
+         }
       }
+
+      //Display the file size
+      System.out.println(copied + " bytes copied !");
 
    }   //End of main
 } //End of class
