@@ -21,18 +21,22 @@ public class copyfile
       File sourceFile = new File(args[0]);
       if (!sourceFile.exists())
       {
-         System.out.println("Source file: " + args[0] + "doesn't exist!");
+         System.out.println("Source file: " + args[0] + " doesn't exist!");
          System.exit(2);
       }
+      
+      //Check for the target file
+      File targetFile = new File(args[1]);
+      if (targetFile.exists())
+      {
+         System.out.println("Target file: " + args[1] + " already exists !");
+         System.exit(3);
+      }
+
       try 
       {
          
-      } catch (FileNotFoundException e)
-      {
-         e.printStackTrace();
-      } catch (IOException e)
-      {
-         e.printStackTrace();
       }
+
    }   //End of main
 } //End of class
