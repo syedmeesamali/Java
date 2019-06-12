@@ -1,7 +1,7 @@
 import java.io.*;
 
 //This java program copies one file to another file. Both names are provided.
-public class copyfile
+public class filecopy
 {
 /** Main method
  * args[0] - original file
@@ -11,7 +11,7 @@ public class copyfile
    {
       if (args.length != 2)
       {
-         System.out.println("Usage: java copy sourceFile targetFile");
+         System.out.println("Usage: java filecopy sourceFile targetFile");
          System.exit(1);
       }
       
