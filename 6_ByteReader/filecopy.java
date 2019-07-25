@@ -1,3 +1,4 @@
+import java.applet.*;
 import java.io.*;
 
 //This java program copies one file to another file. Both names are provided.

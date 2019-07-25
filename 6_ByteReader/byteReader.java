@@ -34,9 +34,8 @@ public class byteReader
          //Below code is to display the various elements of the BMP byte array
          for (int x = 0; x < bt.length; x++)
          {
-         System.out.println("Element at index " + x + " : "+ bt[x]);
-         int rand = (int)(Math.random() * 2);
-         System.out.println("Random item:" + rand);
+            int rand = (int)(Math.random() * 2);
+            System.out.println("Element[" + x + "]"+ bt[x] + "| Random: [" + rand + "]");
          }
 
       } catch (FileNotFoundException e)
