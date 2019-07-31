@@ -4,10 +4,10 @@ class Person {
    int age;
    
    //Constructor method
-   Person(string name) {
+   Person(String name) {
       this.name = name;
       age = 0;
-
+   }
    //Methods for class
    String getName() {
    return name;
