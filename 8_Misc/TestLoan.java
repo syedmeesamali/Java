@@ -1,16 +1,15 @@
 import java.util.Scanner;
-import java.util.scanner;
 
 //Code for testing in development
 public class TestLoan {
    public static void main(String[] args) {      
       Scanner input = new Scanner(System.in);
-      Sysetm.out.print("Enter interest rate e.g. 8.5: ");
+      System.out.print("Enter interest rate e.g. 8.5: ");
       double annualInterestRate = input.nextDouble();
-      Sysetm.out.print("Enter number of years as an integer: ");
+      System.out.print("Enter number of years as an integer: ");
       int numberOfYears = input.nextInt();
 
-      Sysetm.out.print("Enter loan amount e.g. 120000.80: ");
+      System.out.print("Enter loan amount e.g. 120000.80: ");
       double loanAmount = input.nextDouble();
 
       Loan loan = new Loan(annualInterestRate, numberOfYears, loanAmount);
