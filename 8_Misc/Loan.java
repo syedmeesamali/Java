@@ -25,6 +25,36 @@ public class Loan {
       return annualInterestRate;
    }
 
+   public void settleAnnualInterestRate(double annualInterestRate)
+   {
+      this.annualInterestRate = annualInterestRate;
+   }
+
+   public int getNumberOfYears() 
+   {
+      return numberOfYears;
+   }
+   
+   public void setNumberOfYears(int numberOfYears) 
+   {
+      this.numberOfYears = numberOfYears;
+   }
+
+   public void setLoanAmount(double loanAmount)
+   {
+      this.loanAmount = loanAmount;
+   }
+
+   public void getMonthlyPayment() 
+   {
+      double totalPayment = getMonthlyPayment() * numberOfYears * 12;
+      return totalPayment;
+   }
+
+   public java.util.Date getLoanDate() 
+   {
+      return loanDate;
+   }
    
 
 }
