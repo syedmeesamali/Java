@@ -4,12 +4,13 @@ import java.util.Scanner;
 public class GetBMI {
    public static void main(String[] args) {      
       Scanner input = new Scanner(System.in);
-      System.out.print("Enter Height: ");
+      System.out.print("Enter Height (inches): ");
       double height = input.nextDouble();
-      System.out.print("Enter Weight: ");
+      System.out.print("Enter Weight (lbs): ");
       double weight = input.nextDouble();
 
-      BMI myBMI = new BMI("SYED", 30, height, weight)
-      System.out.printf("The BMI for: " + myBMI.getName() " is: " + myBMI.getBMI());
+      BMI myBMI = new BMI("SYED", 30, height, weight);
+      System.out.printf("The BMI for " + myBMI.getName() + " is: " + myBMI.getBMI());
+      System.out.println("Status is: " + myBMI.getStatus());
    } //End of main method
 } //End of class
