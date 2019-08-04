@@ -4,9 +4,9 @@ import java.util.Scanner;
 public class GetBMI {
    public static void main(String[] args) {      
       Scanner input = new Scanner(System.in);
-      System.out.print("Enter Height (inches): ");
+      System.out.print("Enter Height: ");
       double height = input.nextDouble();
-      System.out.print("Enter Weight (lbs): ");
+      System.out.print("Enter Weight: ");
       double weight = input.nextDouble();
 
       BMI myBMI = new BMI("SYED", 30, height, weight);
